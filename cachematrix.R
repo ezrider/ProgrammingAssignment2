@@ -29,6 +29,11 @@ cacheSolve <- function(x, ...) {
     return(i)
   }
   data <- x$get()
+  ## REVIEW COMMENT -->
+  ## The additional parameters passed to cacheSolve should have been passed on 
+  ## to the solve() function here:
+  ## i <- solve(data, ...)
+  ## <-- REVIEW COMMENT
   i <- solve(data)
   x$setinverse(i)
   i
